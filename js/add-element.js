@@ -16,14 +16,25 @@ function addElement() {
   // add a input text box
   
   // whenever the user are done add the element
+  $('input').blur(convertLi);
+  $('#save').text("Need Save to Database");
   
 }
-
+function convertLi(){
+  var userinput = $(this).val();
+  console.log(userinput);
+  $('#todo').append('<li class="cool">' + userinput+' </li>');
+  $(this).remove();
+}
 // bind click with the event handler
 
 //  click the li element will change the changeStyle
 //  three style : complete, cool, hot
-function changeStyle() {}
+$('li').click(changeStyle);
+function changeStyle() {
+  if ($(this).hasClass
+
+}
 
 // delete complete element by clicking the trash can
 document.getElementById('remove').addEventListener('click', removeElement);
